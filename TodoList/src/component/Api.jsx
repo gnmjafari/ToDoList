@@ -30,6 +30,14 @@ function Api(props) {
     setTodo(todo.filter((task) => task.id !== id));
   };
 
+  const handleDeleteAll = () => {
+    setTodo(
+      todo.filter((item) => {
+        return item.complete === false;
+      })
+    );
+  };
+
   const complete = (id) => {
     setTodo(
       todo.map((item) => {
@@ -41,6 +49,16 @@ function Api(props) {
         } else {
           return item;
         }
+      })
+    );
+  };
+
+  const completeAll = () => {
+    setTodo(
+      todo.map((item) => {
+        return (
+          (item.complete = !item.complete), { ...item, complete: item.complete }
+        );
       })
     );
   };
@@ -83,6 +101,8 @@ function Api(props) {
         edit,
         SaveEdit,
         handleEdit,
+        completeAll,
+        handleDeleteAll,
       }}
     >
       <DataEdit.Provider value={[editTodo, setEditTodo]}>
