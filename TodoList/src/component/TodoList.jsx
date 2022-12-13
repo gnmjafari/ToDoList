@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { DataContext, DataEdit, FunctionAll } from "./Api";
+import { CiCircleRemove, CiEdit } from "react-icons/ci";
 
 function TodoList() {
   const [todo, setTodo] = useContext(DataContext);
@@ -21,22 +22,26 @@ function TodoList() {
         {todo.map((item, index) => {
           if (item.edit) {
             return (
-              <li key={index} id={item.id}>
+              <li key={index} id={item.id} className="TodoList_item">
                 <input
+                  className="TodoList_item-input"
                   type="text"
                   id={item.id}
                   value={editTodo}
                   onChange={handleEdit}
                 />
-                <button onClick={() => SaveEdit(item.id, editTodo)}>
+                <button
+                  className="TodoList_item-button"
+                  onClick={() => SaveEdit(item.id, editTodo)}
+                >
                   Save
                 </button>
               </li>
             );
           }
           return (
-            <li key={index} id={item.id}>
-              <label htmlFor={item.id}>
+            <li key={index} id={item.id} className="TodoList_item">
+              <label htmlFor={item.id} className="TodoList_item-lable">
                 <input
                   type="checkbox"
                   checked={item.complete}
@@ -46,20 +51,27 @@ function TodoList() {
                 />
                 {item.name}
               </label>
-              <button disabled={item.complete} onClick={() => edit(item.id)}>
-                Edit
-              </button>
-              <button
-                disabled={item.complete}
-                onClick={() => handleDelete(item.id)}
-              >
-                Remove
-              </button>
+              <div className="TodoList_item-contianer_button">
+                <button
+                  className="TodoList_item-button"
+                  disabled={item.complete}
+                  onClick={() => edit(item.id)}
+                >
+                  <CiEdit />
+                </button>
+                <button
+                  className="TodoList_item-button"
+                  disabled={item.complete}
+                  onClick={() => handleDelete(item.id)}
+                >
+                  <CiCircleRemove />
+                </button>
+              </div>
             </li>
           );
         })}
       </ul>
-      <div>
+      <div className="TodoList_Fotter">
         <label htmlFor="">
           <input type="checkbox" onChange={() => completeAll()} />
           All
@@ -69,7 +81,12 @@ function TodoList() {
           {todo.filter((item) => item.complete === true).length} of {""}
           {todo.length} tasks dons
         </p>
-        <button onClick={() => handleDeleteAll()}>Remove Checked</button>
+        <button
+          className="TodoList_Fotter-button"
+          onClick={() => handleDeleteAll()}
+        >
+          Remove Checked
+        </button>
       </div>
     </>
   );

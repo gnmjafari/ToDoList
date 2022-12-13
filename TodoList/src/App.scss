@@ -9,10 +9,86 @@ body {
 }
 
 .Todo-Form {
+  width: 500px;
+  margin-top: 50px;
+  margin: auto;
+  padding: 15px;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   gap: 50px;
   margin-top: 30px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  .FormInput {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    .FormInput_Input {
+      border: 0;
+      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+        rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+      padding: 10px 15px;
+      outline: none;
+    }
+    .FormInput_button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      border: 0;
+      box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+      background-color: white;
+    }
+  }
+  .TodoList {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+    .TodoList_item {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      list-style-type: none;
+      .TodoList_item-lable {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 7px;
+      }
+      .TodoList_item-contianer_button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        .TodoList_item-button {
+          border: 0;
+          padding: 5px;
+          background-color: white;
+          box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        }
+      }
+    }
+  }
+  .TodoList_Fotter {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    .TodoList_Fotter-button {
+      border: 0;
+      padding: 10px;
+      background-color: white;
+      box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    }
+  }
 }

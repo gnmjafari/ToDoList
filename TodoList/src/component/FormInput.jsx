@@ -10,12 +10,14 @@ function FormInput() {
   return (
     <form className="FormInput" autoComplete="off" onSubmit={onSubmit}>
       <input
+        className="FormInput_Input"
+        size={50}
         type="text"
         placeholder="Add ToDo"
         value={addTodo}
         onChange={handleChange}
       />
-      <button type="submit">
+      <button className="FormInput_button" type="submit">
         <BsPlusLg />
       </button>
     </form>
