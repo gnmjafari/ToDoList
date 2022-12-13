@@ -8,7 +8,7 @@ export const DataEdit = createContext();
 function Api(props) {
   const [todo, setTodo] = useState([]);
   const [addTodo, setAddTodo] = useState("");
-  const [editTodo, setEditTodo] = useState(false);
+  const [editTodo, setEditTodo] = useState("");
 
   const handleChange = (event) => {
     setAddTodo(event.target.value);
@@ -45,15 +45,45 @@ function Api(props) {
     );
   };
 
-  const edit = () => {
-    setEditTodo(true);
+  const edit = (id) => {
+    setTodo(
+      todo.map((item) => {
+        if (item.id === id) {
+          return { ...item, edit: true };
+        } else {
+          return item;
+        }
+      })
+    );
   };
 
-  const Save = (id, name) => {};
+  const SaveEdit = (id, value) => {
+    setTodo(
+      todo.map((item) => {
+        if (item.id === id) {
+          return { ...item, edit: false, name: value };
+        } else {
+          return item;
+        }
+      })
+    );
+  };
+
+  const handleEdit = (event) => {
+    setEditTodo(event.target.value);
+  };
 
   return (
     <FunctionAll.Provider
-      value={{ onSubmit, handleChange, handleDelete, complete, edit }}
+      value={{
+        onSubmit,
+        handleChange,
+        handleDelete,
+        complete,
+        edit,
+        SaveEdit,
+        handleEdit,
+      }}
     >
       <DataEdit.Provider value={[editTodo, setEditTodo]}>
         <DataAddTodo.Provider value={[addTodo, setAddTodo]}>
