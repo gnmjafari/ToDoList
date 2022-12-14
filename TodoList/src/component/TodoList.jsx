@@ -24,6 +24,7 @@ function TodoList() {
             return (
               <li key={index} id={item.id} className="TodoList_item">
                 <input
+                  size="40"
                   className="TodoList_item-input"
                   type="text"
                   id={item.id}
@@ -41,7 +42,14 @@ function TodoList() {
           }
           return (
             <li key={index} id={item.id} className="TodoList_item">
-              <label htmlFor={item.id} className="TodoList_item-lable">
+              <label
+                htmlFor={item.id}
+                className={
+                  item.complete === true
+                    ? "active TodoList_item-lable"
+                    : "TodoList_item-lable"
+                }
+              >
                 <input
                   type="checkbox"
                   checked={item.complete}
@@ -72,7 +80,7 @@ function TodoList() {
         })}
       </ul>
       <div className="TodoList_Fotter">
-        <label htmlFor="">
+        <label htmlFor="" className="TodoList_Fotter-lable">
           <input type="checkbox" onChange={() => completeAll()} />
           All
         </label>

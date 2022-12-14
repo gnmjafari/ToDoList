@@ -9,6 +9,8 @@ body {
 }
 
 .Todo-Form {
+  background-color: #282a31;
+  border-radius: 7px;
   width: 500px;
   margin-top: 50px;
   margin: auto;
@@ -32,6 +34,8 @@ body {
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   padding: 10px 15px;
   outline: none;
+  cursor: pointer;
+  border-radius: 7px;
 }
 .Todo-Form .FormInput .FormInput_button {
   display: flex;
@@ -40,7 +44,9 @@ body {
   padding: 10px;
   border: 0;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-  background-color: white;
+  cursor: pointer;
+  background-color: #f8ce46;
+  border-radius: 7px;
 }
 .Todo-Form .TodoList {
   width: 100%;
@@ -58,6 +64,9 @@ body {
   align-items: center;
   list-style-type: none;
 }
+.Todo-Form .TodoList .TodoList_item .active {
+  text-decoration: line-through;
+}
 .Todo-Form .TodoList .TodoList_item .TodoList_item-lable {
   display: flex;
   justify-content: center;
@@ -65,6 +74,24 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   gap: 7px;
+  cursor: pointer;
+  color: white;
+}
+.Todo-Form .TodoList .TodoList_item .TodoList_item-input {
+  border: 0;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  padding: 10px 15px;
+  outline: none;
+  cursor: pointer;
+}
+.Todo-Form .TodoList .TodoList_item .TodoList_item-button {
+  border: 0;
+  padding: 10px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  cursor: pointer;
+  background-color: #f8ce46;
+  border-radius: 7px;
 }
 .Todo-Form .TodoList .TodoList_item .TodoList_item-contianer_button {
   display: flex;
@@ -73,10 +100,17 @@ body {
   gap: 15px;
 }
 .Todo-Form .TodoList .TodoList_item .TodoList_item-contianer_button .TodoList_item-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: 0;
   padding: 5px;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  cursor: pointer;
+  background-color: #f8ce46;
+  border-radius: 7px;
+  font-size: 18px;
 }
 .Todo-Form .TodoList_Fotter {
   width: 100%;
@@ -84,10 +118,20 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 10px;
+  color: white;
 }
 .Todo-Form .TodoList_Fotter .TodoList_Fotter-button {
   border: 0;
   padding: 10px;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  cursor: pointer;
+  background-color: #f8ce46;
+  border-radius: 7px;
+}
+.Todo-Form .TodoList_Fotter .TodoList_Fotter-lable {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
 }/*# sourceMappingURL=App.css.map */
