@@ -9,7 +9,6 @@ function Api(props) {
   const [todo, setTodo] = useState([]);
   const [addTodo, setAddTodo] = useState("");
   const [editTodo, setEditTodo] = useState("");
-  console.log(editTodo);
 
   const handleChange = (event) => {
     setAddTodo(event.target.value);
