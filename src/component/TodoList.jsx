@@ -29,6 +29,7 @@ function TodoList() {
                   type="text"
                   id={item.id}
                   value={editTodo}
+                  placeholder={item.name}
                   onChange={handleEdit}
                 />
                 <button
