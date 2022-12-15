@@ -14,7 +14,6 @@ function TodoList() {
     handleDeleteAll,
   } = useContext(FunctionAll);
   const [editTodo, setEditTodo] = useContext(DataEdit);
-  console.log(todo);
 
   return (
     <>
