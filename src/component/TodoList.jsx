@@ -65,14 +65,16 @@ function TodoList() {
                   disabled={item.complete}
                   onClick={() => edit(item.id)}
                 >
-                  <CiEdit />
+                  {/* <CiEdit /> */}
+                  edit
                 </button>
                 <button
                   className="TodoList_item-button"
                   disabled={item.complete}
                   onClick={() => handleDelete(item.id)}
                 >
-                  <CiCircleRemove />
+                  {/* <CiCircleRemove /> */}
+                  remove
                 </button>
               </div>
             </li>
